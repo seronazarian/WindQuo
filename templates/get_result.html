@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<section class="progress-area gray-bg">
+<div class="container">
+<div class="row">
+    {% for each_line in result %}
+    <b>
+{{ each_line.0 }}
+    </b>
+    <br>
+    {{ each_line.1 }}
+    <br>
+{% endfor %}
+    </div>
+    </div>
+</section>
+
+{% endblock %}

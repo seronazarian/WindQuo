@@ -1,0 +1,241 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sumon Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>{% block title %}
+    Hassn Dev Landing Template.
+    {% endblock %}</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    {% block head %}
+    {% include 'static_css_files.html' %}
+    <!-- Plugin-CSS -->
+        {% load static %}
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% endblock %}
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    <div class="preloader">
+        <span><i class="lnr lnr-sun"></i></span>
+    </div>
+    <!-- MainMenu-Area -->
+    <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="primary_menu">
+                <div class="right-button hidden-xs">
+                    <a href="{% url 'basic:get-result' %}">Upload File</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}?next=/">Logout</a>
+
+                    {% else %}
+                    <a href="{% url 'basic:sign-up' %}">Sign Up</a>
+                    <a href="{% url 'login' %}?next=/">login</a>
+
+                    {% endif %}
+                {% if user.is_admin %}
+                    <a href="{% url 'admin:auth_user_add' %}">Add User</a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- MainMenu-Area-End -->
+    <!-- Home-Area -->
+    <header class="home-area overlay" id="home_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 ">
+                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing stuff through H-dev</h1>
+                    <div class="space-20"></div>
+                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                    </div>
+                    <div class="space-20"></div>
+                </div>
+                <div class="col-xs-12 hidden-sm col-md-5 col-md-offset-1">
+                    <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/blog-1.jpg" alt="">
+                    </figure>
+                </div>
+             </div>
+            <div class="space-40 hidden-xs"></div>
+
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <div>
+                        <h3 class="text-center">Monthly Plan</h3>
+                        <a href="#" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Start Plan</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <div>
+                        <h3 class="text-center">Yearly Plan</h3>
+                        <a href="#" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i class="lnr lnr-download"></i>Start Plan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="space-80 hidden-xs"></div>
+        </div>
+    </header>
+    <!-- Home-Area-End -->
+    <!-- About-Area -->
+    
+    <!-- About-Area-End -->
+    <!-- Progress-Area -->
+    {% block content %}
+
+    <section class="progress-area gray-bg" id="progress_page2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="page-title section-padding">
+                        <h5 class="title wow fadeInUp" data-wow-delay="0.2s">Our Progress</h5>
+                        <div class="space-10"></div>
+                        <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
+                        <div class="space-20"></div>
+                        <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        </div>
+                        <div class="space-50"></div>
+                        <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-5 col-md-offset-1">
+                    <div class="page-title section-padding">
+                        <img src="images/progress-bg.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="progress-area gray-bg" id="progress_page2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-5">
+                    <div class="page-title section-padding">
+                        <img src="images/video-bg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-md-offset-1">
+                    <div class="page-title section-padding">
+                        <h5 class="title wow fadeInUp" data-wow-delay="0.2s">Our Work</h5>
+                        <div class="space-10"></div>
+                        <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
+                        <div class="space-20"></div>
+                        <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
+                        </div>
+                        <div class="space-50"></div>
+                        <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Progress-Area-End -->
+    <!-- Video-Area -->
+    {% endblock %}
+
+    
+    
+    <!-- Subscribe-Form-Area -->
+    <!-- Footer-Area -->
+    <footer class="footer-area" id="contact_page">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="page-title text-center">
+                            <h5 class="title">Contact US</h5>
+                            <h3 class="dark-color">Find Us By Bellow Details</h3>
+                            <div class="space-60"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-map-marker"></span>
+                            </div>
+                            <p>8-54 Paya Lebar Square <br /> 60 Paya Lebar Roa SG, Singapore</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-phone-handset"></span>
+                            </div>
+                            <p>+65 93901336 <br /> +65 93901337</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-envelope"></span>
+                            </div>
+                            <p>yourmail@gmail.com <br /> backpiper.com@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <span>Copyright All rights reserved | made 2020</span>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-7">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Testimonial</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom-End -->
+    </footer>
+    <!-- Footer-Area-End -->
+    {% include 'static_script_files.html' %}
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<section class="progress-area gray-bg">
+<div class="container">
+<div class="row">
+    <h2>Login</h2>
+    <form method="POST">
+  {% csrf_token %}
+        {% load crispy_forms_filters %}
+{{ form|crispy }}
+        <div class="row">
+          <button class="bttn-default wow fadeInUp" type="submit">Login</button>
+</div>
+    </form>
+    </div>
+    </div>
+</section>
+{% endblock %}

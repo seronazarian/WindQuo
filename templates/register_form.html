@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block title %}
+Register
+{% endblock %}
+{% block content %}
+<section class="progress-area gray-bg">
+<div class="container">
+<div class="row">
+    <h2>Register</h2>
+    <form method="post">
+  {% csrf_token %}
+        {% load crispy_forms_filters %}
+{{ form|crispy }}
+        <div class="row">
+          <button class="bttn-default wow fadeInUp" type="submit">Register</button>
+</div>
+    </form>
+    </div>
+    </div>
+</section>
+{% endblock %}
